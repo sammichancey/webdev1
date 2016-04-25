@@ -1,0 +1,27 @@
+.header {
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: bold;
+}
+
+.header_text a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.header_text a:hover {
+	color: #e5fff3;
+	border-bottom: 0;
+}
+
+ body{
+    background-color: #F8F4F1;
+    background-image: url(http://files.cargocollective.com/653025/background_1.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #000000;
+    font-family: futura, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
