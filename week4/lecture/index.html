@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Web Dev 1 - Week 4</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Week 4</h1>
+					<h3>More Advanced CSS</h3>
+				</section>
+
+
+				<section>
+					<h2>The Box Model</h2>
+					<p>box-sizing:</p>
+					<p>This CSS property lets you define how the box model works.</p>
+					<p>content-box is the default, and placed padding and border outside of the box.</p>
+					<p>border-box is the more sensible way, and places these values within the box</p>
+				</section>
+
+				<section>
+					<h2>Floats</h2>
+					<p>Lets block-level elements sit beside each other on a page.</p>
+					<p>Can float objects left or right with the float property.</p>
+					<p>A parent with floating children will collapse its height.</p>
+					<p>Can use the clear property to fix this. You cna clear left, right, and both</p>
+				</section>
+
+				<section>
+					<h2>Positioning</h2>
+					<p>Static - the default for all elements. Cannot use positioning properties (top, right, etc).</p>
+					<p>Relative - makes position relative to parent.</p>
+				</section>
+
+				<section>
+					<h2>More Positioning</h2>
+					<p>Absolute - Removes from document flow, sets to a specific position, relative to last parent with a specified position.</p>
+					<p>Fixed - Fixes the element to a position relative to the viewport. Remains fixed even if the window is scrolled.</p>
+				</section>
+
+				<section>
+					<h2>Rounded Corners</h2>
+					<p>Use the border-radius property. Can use the shorthand, or each individual property.</p>
+					<pre><code>
+border-radius: 10px;
+/* or */
+border-radius: 10px 20px 10px 20px;
+/* or */
+border-top-right-radius: 10px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+border-top-right-radius: 10px;
+					</code> </pre>
+					<p>You may need to use vendor prefixes.</p>
+				</section>
+
+				<section>
+					<h2>Drop Shadows</h2>
+					<p>The box-shadow property creates a shadow, and can only be written in the shorthand. Requires the first two values and a color. The values it can take are:</p>
+					<ul>
+						<li>Horizontal offset</li>
+						<li>Vertical offset</li>
+						<li>Blur distance (optional)</li>
+						<li>Spread of shadow (optional)</li>
+						<li>Color</li>
+					</ul>
+					<pre><code>
+box-shadow: inset 5px 5px 3px 3px #777777;
+/* The keyword inset can also be used */
+					</code> </pre>
+				</section>
+
+				<section>
+					<h2>More Drop Shadows</h2>
+					<p>Use text-shadow to add a shadow to text. The values it can take are: </p>
+					<ul>
+						<li>Horizontal offset</li>
+						<li>Vertical offset</li>
+						<li>Blur distance (optional)</li>
+						<li>Color</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Gradients</h2>
+					<p>Gradients are weird and still not well supported. Use a solid background color before declaring a css gradient.</p>
+					<p>Use an online tool to generate one, you will never, ever code one of these by hand.</p>
+					<a href="http://www.colorzilla.com/gradient-editor/">Colorzilla Gradient Editor</a>
+				</section>
+
+				<section>
+					<h2>Vendor Prefixes</h2>
+					<p>CSS3 is a working spec, which means that browsers may handle new properties differently from each other.</p>
+					<p>Use prefixes before newer properties to implement the vendor-specific versions.</p>
+					<p>Possible prefixes are:</p>
+					<ul>
+						<li>-webkit-</li>
+						<li>-moz-</li>
+						<li>-ms-</li>
+						<li>-o-</li>
+					</ul>
+					<p>Check usage requirements at: <a href="http://caniuse.com/">CanIUse</a></p>
+				</section>
+
+				<section>
+					<h2>Fonts</h2>
+					<p>Traditional Web-Safe Fonts:</p>
+					<ul>
+						<li>Times</li>
+						<li>Arial</li>
+						<li>Verdana</li>
+						<li>Georgia</li>
+						<li>Courier</li>
+					</ul>
+					<p>These are super boring. CSS3 opens up a brave new world of font choices.</p>
+				</section>
+
+				<section>
+					<h2>Google Fonts</h2>
+					<p>Google has a large collection of free-to-use fonts to link to or download.</p>
+					<p>Go to google.com/fonts, make your choices, and it will give you the code to include in your web page.</p>
+					<a href="https://www.google.com/fonts">Google Web Fonts</a>
+				</section>
+
+				<section>
+					<h2>Including Google Fonts</h2>
+					<p>HTML</p>
+					<pre><code>
+&lt;link href=’http://fonts.googleapis.com/css?family=Spirax’ rel=’stylesheet’ type=’text/css’&gt;
+					</code></pre>
+					<p>CSS</p>
+					<pre><code>
+font-family: ‘Spirax’, ‘cursive’;
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>@font-face</h2>
+					<p>Lets you link to font files you want to use. A fon't license may not let you convert it to a web-safe format, even if you own it.</p>
+					<p>Check for free-to-use fonts at these sites:</p>
+					<a href="http://www.fontsquirrel.com">FontSquirrel</a>
+					<a href="http://www.fontex.org/">Fontex</a>
+				</section>
+
+				<section>
+					<h2>Homework: Reading</h2>
+					<p>Read chapters 13 - 17 in the book</p>
+				</section>
+
+				<section>
+					<h2>Homework: Coding</h2>
+					<h3>Webpaint</h3>
+					<p>You will be taking a web comp and writing your own HTML and CSS to reproduce it.</p>
+				</section>
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
